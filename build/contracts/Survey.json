@@ -1,0 +1,969 @@
+{
+  "contractName": "Survey",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "numResponses",
+          "type": "uint256"
+        }
+      ],
+      "name": "makeQuestion",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6101f48061001e6000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636c88224514610046575b600080fd5b341561005157600080fd5b6100676004808035906020019091905050610069565b005b6000806000805480919060010161008091906100da565b915060008281548110151561009157fe5b90600052602060002090019050826040518059106100ac5750595b90808252806020026020018201604052508160000190805190602001906100d4929190610106565b50505050565b815481835581811511610101578183600052602060002091820191016101009190610153565b5b505050565b828054828255906000526020600020908101928215610142579160200282015b82811115610141578251825591602001919060010190610126565b5b50905061014f9190610182565b5090565b61017f91905b8082111561017b576000808201600061017291906101a7565b50600101610159565b5090565b90565b6101a491905b808211156101a0576000816000905550600101610188565b5090565b90565b50805460008255906000526020600020908101906101c59190610182565b505600a165627a7a723058203681ee26ac9c20e2f02c0f766e3333cc15bbc51f9b1ea46d82a832fe169f124a0029",
+  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636c88224514610046575b600080fd5b341561005157600080fd5b6100676004808035906020019091905050610069565b005b6000806000805480919060010161008091906100da565b915060008281548110151561009157fe5b90600052602060002090019050826040518059106100ac5750595b90808252806020026020018201604052508160000190805190602001906100d4929190610106565b50505050565b815481835581811511610101578183600052602060002091820191016101009190610153565b5b505050565b828054828255906000526020600020908101928215610142579160200282015b82811115610141578251825591602001919060010190610126565b5b50905061014f9190610182565b5090565b61017f91905b8082111561017b576000808201600061017291906101a7565b50600101610159565b5090565b90565b6101a491905b808211156101a0576000816000905550600101610188565b5090565b90565b50805460008255906000526020600020908101906101c59190610182565b505600a165627a7a723058203681ee26ac9c20e2f02c0f766e3333cc15bbc51f9b1ea46d82a832fe169f124a0029",
+  "sourceMap": "26:996:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:996:0:-;;;;;;;;;;;;;;;;;;;;;;;;305:188;;;;;;;;;;;;;;;;;;;;;;;;;;;357:15;397:18;375:9;:18;;;;;;;;;;;:::i;:::-;357:36;;418:9;428:10;418:21;;;;;;;;;;;;;;;;;;397:42;;476:12;465:24;;;;;;;;;;;;;;;;;;;;;;;;443:1;:19;;:46;;;;;;;;;;;;:::i;:::-;;305:188;;;:::o;26:996::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\ncontract Survey {\n\t// uint[] hello = [0, 0, 0];\n\n\t// function incrementZeroHello() public {\n\t// \thello = [1, 0, 0];\n\t// }\n\n\t// function getZeroHello() public returns(uint) {\n\t// \treturn hello[0];\n\t// }\n\n\tstruct Question {\n\t\tuint[] questionResponses;\n\t}\n\n\tQuestion[] questions;\n\n\tfunction makeQuestion(uint numResponses) public {\n\t\tuint questionID = questions.length++;\n\t\tQuestion storage q = questions[questionID];\n\t\tq.questionResponses = new uint[](numResponses);\n\t}\n\n\t// function placeResponse(uint questionID, uint responseID) {\n\n\t// }\n\n\t// function Survey() public {}\n\n\t\n\n\t// function placeResponse(uint questionID, uint responseID) public {\n\t// \tsurveyResponses[questionID].questionResponses[responseID]++;\n\t// \t// surveyResponses[questionID][responseID]++;\n\t// }\n\n\t// function getQuestionResponses(uint questionID, uint responseID) public returns (uint) {\n\t// \t// return surveyResponses[questionID].questionResponses[responseID];\n\t// \treturn surveyResponses[questionID][responseID];\n\t// }\n}",
+  "sourcePath": "/Users/jasminesingh/ieor-185/contracts/Survey.sol",
+  "ast": {
+    "absolutePath": "/Users/jasminesingh/ieor-185/contracts/Survey.sol",
+    "exportedSymbols": {
+      "Survey": [
+        37
+      ]
+    },
+    "id": 38,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 37,
+        "linearizedBaseContracts": [
+          37
+        ],
+        "name": "Survey",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Survey.Question",
+            "id": 5,
+            "members": [
+              {
+                "constant": false,
+                "id": 4,
+                "name": "questionResponses",
+                "nodeType": "VariableDeclaration",
+                "scope": 5,
+                "src": "250:24:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                  "typeString": "uint256[] storage pointer"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 2,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "250:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[] storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Question",
+            "nodeType": "StructDefinition",
+            "scope": 37,
+            "src": "230:48:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8,
+            "name": "questions",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "281:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage",
+              "typeString": "struct Survey.Question storage ref[] storage ref"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 6,
+                "name": "Question",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 5,
+                "src": "281:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                  "typeString": "struct Survey.Question storage pointer"
+                }
+              },
+              "id": 7,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "281:10:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage_ptr",
+                "typeString": "struct Survey.Question storage ref[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 35,
+              "nodeType": "Block",
+              "src": "353:140:0",
+              "statements": [
+                {
+                  "assignments": [
+                    14
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14,
+                      "name": "questionID",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36,
+                      "src": "357:15:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 13,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "357:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 18,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 17,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "375:18:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15,
+                        "name": "questions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "375:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage",
+                          "typeString": "struct Survey.Question storage ref[] storage ref"
+                        }
+                      },
+                      "id": 16,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "375:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "357:36:0"
+                },
+                {
+                  "assignments": [
+                    20
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 20,
+                      "name": "q",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36,
+                      "src": "397:18:0",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                        "typeString": "struct Survey.Question storage pointer"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 19,
+                        "name": "Question",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 5,
+                        "src": "397:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                          "typeString": "struct Survey.Question storage pointer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 24,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 21,
+                      "name": "questions",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "418:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage",
+                        "typeString": "struct Survey.Question storage ref[] storage ref"
+                      }
+                    },
+                    "id": 23,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 22,
+                      "name": "questionID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14,
+                      "src": "428:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "418:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Question_$5_storage",
+                      "typeString": "struct Survey.Question storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "397:42:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 33,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 25,
+                        "name": "q",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20,
+                        "src": "443:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                          "typeString": "struct Survey.Question storage pointer"
+                        }
+                      },
+                      "id": 27,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "questionResponses",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4,
+                      "src": "443:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                        "typeString": "uint256[] storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 31,
+                          "name": "numResponses",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10,
+                          "src": "476:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 30,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "465:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_uint256_$dyn_memory_$",
+                          "typeString": "function (uint256) pure returns (uint256[] memory)"
+                        },
+                        "typeName": {
+                          "baseType": {
+                            "id": 28,
+                            "name": "uint",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "469:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 29,
+                          "length": null,
+                          "nodeType": "ArrayTypeName",
+                          "src": "469:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                            "typeString": "uint256[] storage pointer"
+                          }
+                        }
+                      },
+                      "id": 32,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "465:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_memory",
+                        "typeString": "uint256[] memory"
+                      }
+                    },
+                    "src": "443:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                      "typeString": "uint256[] storage ref"
+                    }
+                  },
+                  "id": 34,
+                  "nodeType": "ExpressionStatement",
+                  "src": "443:46:0"
+                }
+              ]
+            },
+            "id": 36,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "makeQuestion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "name": "numResponses",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36,
+                  "src": "327:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "327:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "326:19:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "353:0:0"
+            },
+            "scope": 37,
+            "src": "305:188:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 38,
+        "src": "26:996:0"
+      }
+    ],
+    "src": "0:1022:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/jasminesingh/ieor-185/contracts/Survey.sol",
+    "exportedSymbols": {
+      "Survey": [
+        37
+      ]
+    },
+    "id": 38,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 37,
+        "linearizedBaseContracts": [
+          37
+        ],
+        "name": "Survey",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Survey.Question",
+            "id": 5,
+            "members": [
+              {
+                "constant": false,
+                "id": 4,
+                "name": "questionResponses",
+                "nodeType": "VariableDeclaration",
+                "scope": 5,
+                "src": "250:24:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                  "typeString": "uint256[] storage pointer"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 2,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "250:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[] storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Question",
+            "nodeType": "StructDefinition",
+            "scope": 37,
+            "src": "230:48:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8,
+            "name": "questions",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "281:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage",
+              "typeString": "struct Survey.Question storage ref[] storage ref"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 6,
+                "name": "Question",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 5,
+                "src": "281:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                  "typeString": "struct Survey.Question storage pointer"
+                }
+              },
+              "id": 7,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "281:10:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage_ptr",
+                "typeString": "struct Survey.Question storage ref[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 35,
+              "nodeType": "Block",
+              "src": "353:140:0",
+              "statements": [
+                {
+                  "assignments": [
+                    14
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14,
+                      "name": "questionID",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36,
+                      "src": "357:15:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 13,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "357:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 18,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 17,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "375:18:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15,
+                        "name": "questions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "375:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage",
+                          "typeString": "struct Survey.Question storage ref[] storage ref"
+                        }
+                      },
+                      "id": 16,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "375:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "357:36:0"
+                },
+                {
+                  "assignments": [
+                    20
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 20,
+                      "name": "q",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36,
+                      "src": "397:18:0",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                        "typeString": "struct Survey.Question storage pointer"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 19,
+                        "name": "Question",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 5,
+                        "src": "397:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                          "typeString": "struct Survey.Question storage pointer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 24,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 21,
+                      "name": "questions",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "418:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Question_$5_storage_$dyn_storage",
+                        "typeString": "struct Survey.Question storage ref[] storage ref"
+                      }
+                    },
+                    "id": 23,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 22,
+                      "name": "questionID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14,
+                      "src": "428:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "418:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Question_$5_storage",
+                      "typeString": "struct Survey.Question storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "397:42:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 33,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 25,
+                        "name": "q",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20,
+                        "src": "443:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Question_$5_storage_ptr",
+                          "typeString": "struct Survey.Question storage pointer"
+                        }
+                      },
+                      "id": 27,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "questionResponses",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4,
+                      "src": "443:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                        "typeString": "uint256[] storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 31,
+                          "name": "numResponses",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10,
+                          "src": "476:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 30,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "465:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_uint256_$dyn_memory_$",
+                          "typeString": "function (uint256) pure returns (uint256[] memory)"
+                        },
+                        "typeName": {
+                          "baseType": {
+                            "id": 28,
+                            "name": "uint",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "469:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 29,
+                          "length": null,
+                          "nodeType": "ArrayTypeName",
+                          "src": "469:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                            "typeString": "uint256[] storage pointer"
+                          }
+                        }
+                      },
+                      "id": 32,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "465:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_memory",
+                        "typeString": "uint256[] memory"
+                      }
+                    },
+                    "src": "443:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                      "typeString": "uint256[] storage ref"
+                    }
+                  },
+                  "id": 34,
+                  "nodeType": "ExpressionStatement",
+                  "src": "443:46:0"
+                }
+              ]
+            },
+            "id": 36,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "makeQuestion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "name": "numResponses",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36,
+                  "src": "327:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "327:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "326:19:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "353:0:0"
+            },
+            "scope": 37,
+            "src": "305:188:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 38,
+        "src": "26:996:0"
+      }
+    ],
+    "src": "0:1022:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x345ca3e014aaf5dca488057592ee47305d9b3e10",
+      "transactionHash": "0x104032545552a61a3b44bf4d5ab485bf28992fa9e07be4fb76d20077beaf7c9b"
+    }
+  },
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-05-13T05:34:41.061Z"
+}
