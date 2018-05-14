@@ -34,5 +34,7 @@ To run the file on Terminal, please switch directory to ./VeriPoll/visualizer an
 
 ## Authors
 Blockchain Smart Contract: Jasmine Singh
+
 Java Spark Web App: Sudarshan Gopalakrishnan
+
 Visualizer: Abhinav Kannan
