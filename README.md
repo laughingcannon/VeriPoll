@@ -28,8 +28,7 @@ Private Key: 7b172f463cc687dd91fda2ebe6e99b705ae0251d4dd3a920564adc3a4422a67a
 
 
 ## Running the Visualizer | Author : Abhinav Kannan
-At present, for the Miminum Viable Product, we haven't integrated the data visualizer into the Java Spark Web App.
-However, you can test the "in-development" form of the visualizer by running the visualizer.py file.
+At present, the "in-development" form of the visualizer can be tested by running the visualizer.py file.
 
 To run the file on Terminal, please switch directory to ./VeriPoll/visualizer and run python3 visualizer.py to view the data visualizations.
 
